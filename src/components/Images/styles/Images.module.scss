@@ -194,6 +194,8 @@
       color: #7f8c8d;
     }
     .formControl:focus {
+      -webkit-outline: 3px #3498db solid;
+      -moz-outline: 3px #3498db solid;
       outline: 3px #3498db solid;
       background-color: #ecf0f1;
     }
