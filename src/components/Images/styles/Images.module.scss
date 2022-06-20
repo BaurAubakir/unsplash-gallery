@@ -198,6 +198,9 @@
     .formControl:focus {
       outline: 3px #3498db solid;
       background-color: #ecf0f1;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
     }
     button {
       background-color: rgba(52, 152, 219, 1);
