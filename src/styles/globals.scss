@@ -49,12 +49,8 @@ button,
 input,
 select,
 textarea {
-  -moz-outline: none;
-  -webkit-outline: none;
   outline: none;
   &:focus {
-    -moz-outline: none;
-    -webkit-outline: none;
     outline: none;
   }
 }
