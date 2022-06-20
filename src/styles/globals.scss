@@ -50,6 +50,9 @@ input,
 select,
 textarea {
   outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 input::-ms-reveal,
