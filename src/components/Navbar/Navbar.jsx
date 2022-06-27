@@ -7,19 +7,19 @@ import styles from './styles/Navbar.module.scss';
 import { useMatchMedia } from 'hooks';
 
 export const Navbar = () => {
-  const [show, setShow] = useState(false);
+  const [menuState, setMenuState] = useState(false);
   const ref = useRef(null);
   const { isMobile } = useMatchMedia();
 
   const handleEscape = (e) => {
     if (e.key === 'Escape') {
-      setShow(false);
+      setMenuState(false);
     }
   };
 
   const handleOtsideClick = (e) => {
     if (ref.current && !ref.current.contains(e.target)) {
-      setShow(false);
+      setMenuState(false);
     }
   };
 
@@ -32,9 +32,12 @@ export const Navbar = () => {
     };
   });
 
-  const showMenu = show && (
-    <MobileMenu className={styles.mobileMenu} onClick={() => setShow(false)}>
-      <CustomLink to='/about' onClick={() => setShow(false)}>
+  const showMenu = menuState && (
+    <MobileMenu
+      className={styles.mobileMenu}
+      onClick={() => setMenuState(false)}
+    >
+      <CustomLink to='/about' onClick={() => setMenuState(false)}>
         About
       </CustomLink>
     </MobileMenu>
@@ -45,7 +48,7 @@ export const Navbar = () => {
         <CustomLink to='/'>Unsplash Gallery</CustomLink>
       </ul>
       {isMobile ? (
-        <button className={styles.menuIcon} onClick={() => setShow(true)}>
+        <button className={styles.menuIcon} onClick={() => setMenuState(true)}>
           <Bars style={{ width: 25, height: 25, fill: '#3498db' }} />
         </button>
       ) : (
